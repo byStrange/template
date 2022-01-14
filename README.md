@@ -10,5 +10,8 @@ git clone https://github.com/Strange-bs/template
 
 then everything in this repository will be installed and you can use 
 
+<p>open 'CommandLineHere' file to start your terminal from this folder</p>
+<p>or open 'vscodeHere' file to open this folder with Visual Studio Code</p>
+
 ## Good luck 
 Best wishes <a href="https://github.com/strange-bs">Strange</a>
