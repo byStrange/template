@@ -1,0 +1,245 @@
+* {
+  transition: height 150ms, margin-left 90ms, width 100ms;
+}
+a {
+  text-decoration: none;
+}
+@font-face {
+  font-family: "Canaro";
+  src: url("../assets/fonts/Canaro-Black.woff") format("woff"),
+    url("../assets/fonts/Canaro-Black.ttf") format("ttf");
+}
+.navbar {
+  height: 120px;
+  background: linear-gradient(
+    103.17deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.05) 76.68%
+  );
+  backdrop-filter: blur(26px);
+}
+
+.collapse.navbar-collapse {
+  justify-content: center;
+}
+.navbar-nav.nav-icons li {
+  padding: 10px;
+  cursor:pointer;
+  font-size: 17px;
+}
+
+.wrapper-bg {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../images/bg.png") no-repeat;
+  background-size: cover;
+}
+.navbar-nav .nav-item {
+  margin-left: 20px;
+}
+
+.navbar-nav.nav-icons li i:not(.fa-search) {
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+}
+.navbar a {
+  font-family: "Poppins";
+  color: #fff;
+}
+.hidden-nav{
+ z-index: 9999;
+  width: 100%;
+  position:absolute;
+  top: 100px;
+  left: 0;
+}
+ul li {
+  user-select: none;
+}
+.hidden-nav .container {
+  background: linear-gradient(
+    103.17deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.05) 76.68%
+  );
+  backdrop-filter: blur(26px);
+  padding: 15px;
+}
+
+.hidden-nav .container a{
+  color:#fff;
+  font-family:Poppins;
+  transition: 200ms
+}
+.hidden-nav  li:hover a{
+  margin-left: 6px;
+}
+.navbar-logo img {
+  width: 25px;
+}
+.title.text {
+  font-size: 50px;
+  font-family: poppins;
+  margin-bottom: 100px;
+  color: #fff;
+  font-weight: 400;
+}
+.main.wrapper {
+  width: 100%;
+  height: calc(100vh - 130px);
+  padding-top: 20px;
+}
+
+.default-card {
+  padding: 30px 0 45px 40px;
+  border-radius: 20px;
+  background: linear-gradient(
+    103.17deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.05) 76.68%
+  );
+  backdrop-filter: blur(20px);
+  height: 400px;
+  position: relative;
+  color: #fff;
+  font-family: poppins;
+}
+.default-card .title {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+.default-card .desc {
+  font-weight: 500;
+  width: 44%;
+  margin-bottom: 40px;
+}
+.default-card .custom-btn {
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 10px;
+  position: relative;
+  color: #fff;
+  background: linear-gradient(
+    103.17deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.05) 76.68%
+    
+  );
+  backdrop-filter: blur(40px);
+  transform: translateZ(20px)
+}
+.default-card .custom-btn span {
+  z-index: 4;
+}
+.show-md{display:none;color: #fff;}
+.default-card .custom-btn::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+  background: #f27d1d;
+  height: 100%;
+  z-index: -1;
+  border-radius: 10px;
+}
+.default-card .img {
+  position: absolute;
+  width: 350px;
+  top: -50px;
+  ;
+  left: 290px;
+}
+.default-card img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar-nav .nav-item {
+    margin-left: 0;
+  }
+  .navbar-nav.nav-icons {
+    /* display: flex !important; */
+    flex-direction: row;
+  }
+  .title.text {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+  .default-card {
+    height: 330px;
+    padding: 25px 0 30px 30px !important;
+  }
+  .default-card:not(.last) {
+    margin-bottom: 15px;
+  }
+  .default-card .title {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  .navbar {
+    height: 100px !important;
+  }
+}
+/* @media screen and (max-width: 990px) and (min-width: 766px) {
+  .default-card .img {
+    width: 270px;
+    top: -18px;
+    left: 58% !important;
+  }
+} */
+@media screen and (max-width: 991px) {
+  .no-md{display:none}
+  .show-md {display: list-item}
+}
+@media screen and (max-width: 767px) and (min-width: 300px) {
+  .navbar {
+    height: 70px !important;
+  }
+  .hidden-nav{
+    top: 70px !important;
+  }
+  .default-card {
+    height: 300px;
+    padding: 10px 20px !important;
+  }
+  .default-card:not(.last) {
+    margin-bottom: 30px;
+  }
+  .defauly-card .img {
+    border: 1px solid red;
+    width: 200px;
+    left: 0 !important;
+    display: none;
+  }
+  .default-card .desc {
+    font-size: 12px;
+    font-weight: 400;
+    width: 50%;
+  }
+  
+}
+
+@media screen and (max-width: 400px) {
+  .defauly-card .img {
+    border: 1px solid red;
+    width: 200px;
+    left: 0px;
+  }
+   .default-card .desc {
+    font-size: 10px;
+    font-weight: 400;
+    width: 50%;
+  }
+  .nav-icons i {
+    font-size: 15px
+  }
+  .navbar-brand {
+    font-size: 16px !important;
+  }
+}

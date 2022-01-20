@@ -8,3 +8,56 @@ for (let c = 0; c < properties.length; c++) {
     }
   }
 }
+
+function setPos() {
+  let rect = document.querySelector(".default-card");
+  let el = document.querySelectorAll(".default-card .img");
+  el.forEach((img, index) => {
+    img.style.left =
+      rect.getBoundingClientRect().width +
+      rect.getBoundingClientRect().x -
+      img.getBoundingClientRect().width -
+      50 +
+      "px";
+
+    if (window.innerWidth <= 767 && window.innerWidth > 500) {
+      img.style.top = -10 + "px";
+      img.style.width = 250 + "px";
+      img.style.left =
+        window.innerWidth < 600
+          ? parseInt(img.style.left) + 20 + "px"
+          : parseInt(img.style.left) + 10 + "px";
+    }
+
+    if (window.innerWidth <= 500) {
+      img.style.top = 50 + "px";
+      img.style.left =
+        window.innerWidth > 400
+          ? parseInt(img.style.left) + 30 + "px"
+          : parseInt(img.style.left) + 34 + "px";
+      img.style.width = 150 + "px";
+    }
+    if (window.innerWidth > 1000 && window.innerWidth < 1200) {
+      // img.style.top = "-10px";
+      img.style.width = "300px";
+      img.style.left = parseInt(img.style.left) - 100 + "px";
+    } else if (window.innerWidth > 1200) {
+      img.style.width = "350px";
+    }
+  });
+}
+setInterval(() => {
+  setPos();
+}, 100);
+let toggle = document.getElementById("toggleNav");
+let target = document.getElementById("nav");
+let open = false;
+toggle.onclick = function () {
+  if (!open) {
+    target.style.display = "flex";
+    open = !open;
+  } else {
+    target.style.display = "none";
+    open = !open;
+  }
+};

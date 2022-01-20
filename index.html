@@ -1,14 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <title>Document</title>
-</head>
-<body>
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="assets/js/bootstrap.min.js"></script>
 
-   <script src="assets/js/tools.js"></script>
-</body>
+    <title>Book Swap</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container" display="flex" justifyContent="space-between">
+        <div class="navbar-logo" href="index.html">
+          <img src="assets/images/logo/logo.png" alt="logo" />
+          <a href="index.html" class="navbar-brand">BookSwap</a>
+        </div>
+        <!-- class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation" -->
+       
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Bosh sahifa</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">E'lonlar oynasi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mening e'lonlarim</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Kitob joylash</a>
+            </li>
+          </ul>
+        </div>
+        <ul class="navbar-nav nav-icons">
+          <li class="nav-item">
+            <a href="">
+              <i class="fas fa-search"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="">
+              <i class="fas fa-heart"></i>
+            </a>
+          </li>
+          <li class="nav-item no-md">
+            <a href="">
+              <i class="fas fa-user"></i>
+            </a>
+          </li>
+          <li class="nav-item toggler show-md" id="toggleNav">
+            &#9776
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="hidden-nav" id="nav" display="none">
+      <div class="container">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"
+              >Bosh sahifa</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">E'lonlar oynasi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Mening e'lonlarim</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Kitob joylash</a>
+          </li>
+        </ul>
+      </div>
+   </div>
+    <div class="wrapper-bg"></div>
+    <div class="main wrapper">
+      <div class="container">
+        <div class="title text">
+          <span>Bosh sahifa</span>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-xl-6 col-md-12 col-sm-12">
+            <div class="default-card">
+              <p class="title">E’lon berish</p>
+              <p class="desc">
+                Siz bu sayt orqali o’zingizda bor kitobni manfaatli ravishda siz
+                qidirgan yoki o‘zingizga yoqqan kitobga alishtirishingiz mumkin.
+                <br />
+                Ro‘yxatdan o‘ting va ozingizdagi kitoblarni akkauntingizga
+                joylang.
+              </p>
+              <div class="group">
+                <a href="#" class="custom-btn" data-tilt>
+                  <span>E'lon berish</span>
+                </a>
+              </div>
+              <div class="hoverable img">
+                <img src="assets/images/book-2.png" alt="book picture" />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 col-xl-6 col-md-12 col-sm-12">
+            <div class="default-card last">
+              <p class="title">E’lon ko‘rish</p>
+              <p class="desc">
+                Siz bu sayt orqali o’zingizda bor kitobni manfaatli ravishda siz
+                qidirgan yoki o‘zingizga yoqqan kitobga alishtirishingiz mumkin.
+                <br />E’lon ko‘rish bo‘limiga o‘ting va o‘zingizga yoqqan
+                kitobni toping.
+              </p>
+              <div calss="group">
+                <a href="#" class="custom-btn" data-tilt>
+                  <span>E'lon ko'rish</span>
+                </a>
+              </div>
+              <div class="hoverable img">
+                <img src="assets/images/book-1.png" alt="book picture" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- <script src="assets/js/vanilla-tilt.js"></script> -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/tools.js"></script>
+  </body>
 </html>
+
