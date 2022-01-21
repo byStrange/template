@@ -13,7 +13,7 @@ function setPos() {
   let rect = document.querySelector(".default-card");
   let el = document.querySelectorAll(".default-card .img");
   el.forEach((img, index) => {
-    img.style.left =
+    let l =
       rect.getBoundingClientRect().width +
       rect.getBoundingClientRect().x -
       img.getBoundingClientRect().width -
@@ -22,27 +22,34 @@ function setPos() {
 
     if (window.innerWidth <= 767 && window.innerWidth > 500) {
       img.style.top = -10 + "px";
-      img.style.width = 250 + "px";
+      img.style.width = 180 + "px";
       img.style.left =
         window.innerWidth < 600
-          ? parseInt(img.style.left) + 20 + "px"
-          : parseInt(img.style.left) + 10 + "px";
+          ? parseInt(l) - 20 + "px"
+          : parseInt(l) - 20 + "px";
     }
 
     if (window.innerWidth <= 500) {
       img.style.top = 50 + "px";
       img.style.left =
         window.innerWidth > 400
-          ? parseInt(img.style.left) + 30 + "px"
-          : parseInt(img.style.left) + 34 + "px";
+          ? parseInt(l) + 30 + "px"
+          : parseInt(l) + 34 + "px";
       img.style.width = 150 + "px";
     }
     if (window.innerWidth > 1000 && window.innerWidth < 1200) {
-      // img.style.top = "-10px";
+      img.style.top = "-25px";
       img.style.width = "300px";
-      img.style.left = parseInt(img.style.left) - 100 + "px";
+      img.style.left = parseInt(l) - 100 + "px";
     } else if (window.innerWidth > 1200) {
       img.style.width = "350px";
+      img.style.top = "-25px";
+      img.style.left = parseInt(l) - 20 + "px";
+      if (window.innerWidth > 1400) {
+        img.style.width = "350px";
+        img.style.top = "-25px";
+        img.style.left = parseInt(l) - 80 + "px";
+      }
     }
   });
 }
@@ -88,6 +95,7 @@ if (nextBtn) {
 }
 
 let uploadProfileImg = document.querySelector("#imgUpload");
+let uploadBookImg = document.querySelector("#uploadBookImg");
 let file;
 const pickerOpts = {
   types: [
@@ -102,13 +110,25 @@ const pickerOpts = {
   multiple: false
 };
 if (uploadProfileImg) {
-  uploadProfileImg.onclick = async (e) => {
-    [file] = await window.showOpenFilePicker(pickerOpts);
-    let img = await file.getFile();
-    let fr = new FileReader();
-    fr.readAsDataURL(img);
-    fr.onloadend = function (r) {
-      document.querySelector(".profile-img img").src = fr.result;
-    };
+  uploadProfileImg.onclick = function () {
+    upload(document.querySelector(".profile-img img"));
+  };
+}
+if (uploadBookImg) {
+  uploadBookImg.onclick = function () {
+    upload(uploadBookImg, true);
+  };
+}
+async function upload(e, bgimg = false) {
+  [file] = await window.showOpenFilePicker(pickerOpts);
+  let img = await file.getFile();
+  let fr = new FileReader();
+  fr.readAsDataURL(img);
+  fr.onloadend = function (r) {
+    if (bgimg) {
+      e.style.backgroundColor = "";
+      e.style.backgroundImage = `url(${fr.result})`;
+    }
+    e.src = fr.result;
   };
 }

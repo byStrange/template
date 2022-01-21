@@ -1,6 +1,7 @@
 * {
   transition: height 150ms, margin-left 90ms, width 100ms;
 }
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 a {
   text-decoration: none;
 }
@@ -260,11 +261,46 @@ ul li {
     height: 0;
     color: #fff;
   }
+  .main.add .form {
+    flex-direction: column !important;
+    padding: 0 !important;
+  }
+  .main.add .img-upload-big {
+    width: 100% !important;
+    margin-bottom: 10px !important;
+  }
+  .main.add .default-group {
+    margin: 0 !important;
+    width: 100%;
+  }
+  .main.add .group {
+    justify-content: center !important;
+  }
+  .main.add .row > div:not(:last-child) {
+    margin-bottom: 100px;
+  }
 }
 
 @media screen and (max-width: 400px) {
+  .main.add .form {
+    flex-direction: column !important;
+    padding: 0 !important;
+  }
+  .main.add .img-upload-big {
+    width: 100% !important;
+    margin-bottom: 10px !important;
+  }
+  .main.add .default-group {
+    margin: 0 !important;
+    width: 100%;
+  }
+  .main.add .group {
+    justify-content: center !important;
+  }
+  .main.add .row > div:not(:last-child) {
+    margin-bottom: 100px;
+  }
   .defauly-card .img {
-    border: 1px solid red;
     width: 200px;
     left: 0px;
   }
@@ -282,11 +318,17 @@ ul li {
   .df {
     align-items: flex-start !important;
   }
+  .main .ads.container {
+    height: 300px !important;
+  }
   .form {
     margin-top: 100px;
   }
   .book-card {
     margin-bottom: 30px;
+  }
+  .title.text a {
+    margin-left: 0 !important;
   }
 }
 
@@ -302,7 +344,6 @@ ul li {
   color: #fff;
   inset: 0 -350px;
   position: absolute;
-  border: 1px solid red;
   width: 0;
   height: 0;
 }
@@ -369,7 +410,7 @@ button:focus,
 a:focus {
   outline: none;
 }
-.form .custom-btn:hover {
+.custom-btn:hover {
   color: #fff;
 }
 .group {
@@ -464,8 +505,18 @@ div.form .group {
   color: #000;
   font-family: poppins, serif;
   height: 450px;
+  position: relative;
 }
-
+.book-card.liked::after {
+  content: "\f004";
+  font-family: "Font Awesome 6 Free";
+  position: absolute;
+  top: 10px;
+  left: 90%;
+  color: red;
+  font-size: 18px;
+  font-weight: 900;
+}
 .dark.main .row .col-xl-3 {
   padding: 15px;
 }
@@ -515,3 +566,157 @@ footer .search-bar {
 footer .row > div {
   text-align: left;
 }
+
+.main.add .form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: 0;
+  margin-top: 0;
+  padding: 0;
+  background: transparent;
+  backdrop-filter: blur(0);
+}
+
+.main.add .form .img-upload-big {
+  width: 300px;
+  height: 300px;
+  background: #c4c4c4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.img-upload-big .center {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  height: 90px;
+}
+.img-upload-big .center::after {
+  content: "";
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #fff;
+  top: 54%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.img-upload-big .center span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.img-upload-big img {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8, 0.8);
+}
+.default-group {
+  margin-left: 20px;
+  display: flex;
+  width: calc(100% - 320px);
+  flex-direction: column;
+}
+.default-group input,
+textarea {
+  width: 100%;
+  border: 2px solid #000;
+  padding: 5px;
+  color: #000;
+}
+
+.default-group input:not(:last-child) {
+  margin-bottom: 10px;
+}
+.default-group textarea {
+  resize: none;
+  margin-bottom: 40px;
+}
+.default-group .group,
+.profile .group {
+  justify-content: flex-start;
+}
+.default-group input::placeholder,
+.default-group textarea::placeholder {
+  color: rgba(0, 0, 0, 1);
+}
+textarea:focus {
+  border: 2px solid #000;
+  outline: none;
+}
+
+.main.add .profile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: poppins, serif;
+}
+
+.main.add .text.title {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.main.add .img-container {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.main.add .img-container .img {
+  width: 90px;
+  border-radius: 100%;
+  overflow: hidden;
+  height: 100%;
+}
+
+.main.add .text.name {
+  font-size: 18px;
+  margin-left: 15px;
+  display: flex;
+  font-weight: bold;
+  font-family: poppins, serif;
+  flex-direction: column;
+}
+
+.main.add .text.name span {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.main.add .desc {
+  width: 100%;
+}
+.main.add .desc .item .bold {
+  font-weight: bold;
+}
+.main.add .desc .item:not(:last-child) {
+  margin-bottom: 8px;
+}
+.main .ads.container {
+  background: #f27d1d;
+  border-radius: 15px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  cursor: text !important;
+  color: #fff;
+}
+/* 
+.ads.container.span {
+  font-family: poppins;
+} */
