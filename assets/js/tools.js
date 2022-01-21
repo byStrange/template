@@ -61,3 +61,54 @@ toggle.onclick = function () {
     open = !open;
   }
 };
+
+let nextBtn = document.querySelector("#next");
+
+if (nextBtn) {
+  nextBtn.onclick = function () {
+    if (document.querySelector("form .input-group input").value != "") {
+      nextBtn.id = "submit";
+      setTimeout(() => {
+        let form = document.forms[0];
+        form.style.opacity = ".4";
+        form.classList.add("pending");
+        setTimeout(() => {
+          form.style.opacity = "1";
+          form.querySelector("input").id = "sms";
+          form.querySelector("input").value = "";
+          form.querySelector("input").type = "number";
+          form.querySelector("input").placeholder = "Tasdiqlash kodi";
+          form.querySelector(".input-group p").innerText =
+            "Telefon raqamingizga kelgan sms kodni kiriting";
+          nextBtn.querySelector("span").innerText = "Tasdiqlash";
+        }, 200);
+      }, 300);
+    }
+  };
+}
+
+let uploadProfileImg = document.querySelector("#imgUpload");
+let file;
+const pickerOpts = {
+  types: [
+    {
+      description: "Images",
+      accept: {
+        "image/*": [".png", ".gif", ".jpeg", ".jpg", ".svg"]
+      }
+    }
+  ],
+  excludeAcceptAllOption: true,
+  multiple: false
+};
+if (uploadProfileImg) {
+  uploadProfileImg.onclick = async (e) => {
+    [file] = await window.showOpenFilePicker(pickerOpts);
+    let img = await file.getFile();
+    let fr = new FileReader();
+    fr.readAsDataURL(img);
+    fr.onloadend = function (r) {
+      document.querySelector(".profile-img img").src = fr.result;
+    };
+  };
+}
