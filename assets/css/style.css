@@ -11,7 +11,7 @@ a {
     url("../assets/fonts/Canaro-Black.ttf") format("ttf");
 }
 .navbar {
-  height: 120px;
+  height: 90px;
   background: linear-gradient(
     103.17deg,
     rgba(255, 255, 255, 0.3) 0%,
@@ -164,7 +164,7 @@ ul li {
   position: absolute;
   width: 350px;
   top: -50px;
-  left: 290px;
+  left: 47%;
 }
 .default-card img {
   width: 100%;
@@ -211,6 +211,9 @@ ul li {
   }
   .show-md {
     display: list-item;
+  }
+  .main.add .row .col-lg-4.col-md-12.col-sm-12 {
+    margin-top: 30px;
   }
 }
 @media screen and (max-width: 767px) and (min-width: 300px) {
@@ -261,6 +264,9 @@ ul li {
     height: 0;
     color: #fff;
   }
+  /* .default-card .img {
+    width: 300px !important;
+  } */
   .main.add .form {
     flex-direction: column !important;
     padding: 0 !important;
@@ -279,6 +285,24 @@ ul li {
   .main.add .row > div:not(:last-child) {
     margin-bottom: 100px;
   }
+  .dark.main .bar {
+    width: 100% !important;
+    flex-direction: column !important;
+  }
+  .bar .column {
+    width: 100% !important;
+    border: none !important;
+  }
+  .bar .column .sub-col {
+    border: none !important;
+  }
+
+  /* .row.bar {
+    width: 100% !important;
+  }
+  .row.bar > div {
+    border-right: 0px solid transparent !important;
+  } */
 }
 
 @media screen and (max-width: 400px) {
@@ -507,6 +531,40 @@ div.form .group {
   height: 450px;
   position: relative;
 }
+.book-card.detail .details {
+  position: absolute;
+  width: 170px;
+  text-align: left;
+  top: 65%;
+  background: linear-gradient(
+    103.17deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.05) 76.68%
+  );
+  backdrop-filter: blur(4px);
+  left: 30%;
+  padding: 20px 10px;
+}
+
+.book-card.detail .details .li:not(:last-child) {
+  margin-bottom: 4px;
+}
+.book-card.detail .details .li span {
+  text-decoration: underline;
+  color: #151515;
+}
+
+.row.books .book-card {
+  background: #fff;
+  padding: 7px;
+  cursor: pointer;
+  transition: 250ms;
+}
+.row.books .book-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+    rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
 .book-card.liked::after {
   content: "\f004";
   font-family: "Font Awesome 6 Free";
@@ -520,6 +578,37 @@ div.form .group {
 .dark.main .row .col-xl-3 {
   padding: 15px;
 }
+.main.dark .bar {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  border-radius: 10px;
+  background: #fff;
+  margin-bottom: 15px;
+}
+.main.dark .bar .column {
+  display: flex;
+  width: 50%;
+  height: 50px;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.main.dark .bar .column .sub-col {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  height: 100%;
+}
+.main.dark .bar .column input {
+  border: none;
+  width: 80%;
+  float: right;
+}
+
 .book-card .book-img {
   width: 100%;
   height: 65%;
@@ -557,7 +646,11 @@ footer .container .row {
   top: 100%;
   left: 40px;
 } */
-
+.dfx {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 footer .search-bar {
   border-radius: 5px;
   padding: 5px 20px;
@@ -577,7 +670,13 @@ footer .row > div {
   background: transparent;
   backdrop-filter: blur(0);
 }
-
+.main.add .row > div:not(:last-child) {
+  padding: 15px;
+}
+.main.add .row > div,
+.main.add .row > div > .profile {
+  border-radius: 20px;
+}
 .main.add .form .img-upload-big {
   width: 300px;
   height: 300px;
@@ -595,17 +694,6 @@ footer .row > div {
   text-align: center;
   height: 90px;
 }
-.img-upload-big .center::after {
-  content: "";
-  width: 27px;
-  height: 27px;
-  border-radius: 50%;
-  background: #fff;
-  top: 54%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-}
 
 .img-upload-big .center span {
   font-size: 14px;
@@ -617,6 +705,26 @@ footer .row > div {
   width: 100%;
   height: 100%;
   transform: scale(0.8, 0.8);
+}
+.main .row.bar {
+  border-radius: 10px;
+  background: #fff;
+}
+.main .row.bar > div:not(:last-child) {
+  border-right: 1px solid gray;
+}
+.main .row.bar > div {
+  cursor: pointer;
+}
+.main .row.bar > div:hover * {
+  margin-left: 6px;
+}
+
+.main .row.bar input {
+  width: 80%;
+  height: 50px;
+  border: none;
+  float: right;
 }
 .default-group {
   margin-left: 20px;

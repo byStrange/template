@@ -12,7 +12,7 @@
     />
     <title>My Books</title>
   </head>
-  <body>
+  <body background="#E5E5E5">
       <nav class="navbar navbar-expand-lg navbar-dark">
           <div class="container" display="flex" justifyContent="space-between">
             <div class="navbar-logo" href="index.html">
@@ -80,12 +80,12 @@
           </div>
        </div>
        
-       <div class="main dark">
+       <div class="main dark" margin="40px 0 0 0">
          <div class="container">
-           <div class="title text" color="#000" fontSize="30px">
+           <div class="title text" color="#000" fontSize="30px" marginBottom="25px">
              <span>Mening e'lonlarim</span>
            </div>
-           <div class="row">
+           <div class="row books">
              <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
                <div class="book-card">
                  <div class="book-img">
@@ -150,12 +150,29 @@
                </div>
              </div>
              <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-               <div class="book-card">
+               <div class="book-card detail">
+                 <div class="details">
+                   <div class="li">
+                     <a href="#">
+                        <span>Almashildi</span>
+                     </a>
+                   </div>
+                   <div class="li">
+                     <a href="#">
+                        <span>Vaqtinchalik</span>
+                     </a>
+                   </div>
+                   <div class="li">
+                     <a href="#">
+                        <span  color="red">Umuman o'chirish</span>
+                     </a>
+                   </div>
+                 </div>
                  <div class="book-img">
                    <img src="assets/images/card_book_4.png" alt="">
                  </div>
                  <div class="desc">
-                   <p class="item">
+                   <p class="item" border="1px solid red">
                      <span class="bold">Nomi: </span> <span>Steve Jobs</span>
                    </p>
                    <p class="item">
@@ -169,6 +186,13 @@
                    <span>Andijon - kecha <span id="date">18:20</span></span>
                  </div>
                </div>
+             </div>
+           </div>
+           <div class="footer" marginTop="30px">
+             <div class="group">
+               <a href="./add.html" class="custom-btn secondary">
+                 <span>Kitob Joylash</span>
+               </a>
              </div>
            </div>
          </div>

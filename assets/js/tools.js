@@ -10,49 +10,74 @@ for (let c = 0; c < properties.length; c++) {
 }
 
 function setPos() {
-  let rect = document.querySelector(".default-card");
-  let el = document.querySelectorAll(".default-card .img");
-  el.forEach((img, index) => {
-    let l =
-      rect.getBoundingClientRect().width +
-      rect.getBoundingClientRect().x -
-      img.getBoundingClientRect().width -
-      50 +
-      "px";
-
-    if (window.innerWidth <= 767 && window.innerWidth > 500) {
-      img.style.top = -10 + "px";
-      img.style.width = 180 + "px";
-      img.style.left =
-        window.innerWidth < 600
-          ? parseInt(l) - 20 + "px"
-          : parseInt(l) - 20 + "px";
-    }
-
-    if (window.innerWidth <= 500) {
-      img.style.top = 50 + "px";
-      img.style.left =
-        window.innerWidth > 400
-          ? parseInt(l) + 30 + "px"
-          : parseInt(l) + 34 + "px";
-      img.style.width = 150 + "px";
-    }
-    if (window.innerWidth > 1000 && window.innerWidth < 1200) {
-      img.style.top = "-25px";
-      img.style.width = "300px";
-      img.style.left = parseInt(l) - 100 + "px";
-    } else if (window.innerWidth > 1200) {
-      img.style.width = "350px";
-      img.style.top = "-25px";
-      img.style.left = parseInt(l) - 20 + "px";
-      if (window.innerWidth > 1400) {
-        img.style.width = "350px";
-        img.style.top = "-25px";
-        img.style.left = parseInt(l) - 80 + "px";
-      }
-    }
+  document.querySelectorAll(".default-card .img").forEach((t) => {
+    window.innerWidth > 1200 &&
+      window.innerWidth < 1400 &&
+      ((t.style.width = "300px"),
+      (t.style.top = "0px"),
+      (t.style.left = "47%")),
+      window.innerWidth < 1200 &&
+        window.innerWidth > 991 &&
+        ((t.style.left = "65%"),
+        (t.style.width = "300px"),
+        (t.style.top = "-40px")),
+      window.innerWidth < 991 &&
+        window.innerWidth > 767 &&
+        ((t.style.left = "60%"), (t.style.width = "280px")),
+      window.innerWidth < 767 &&
+        ((t.style.left = "50%"),
+        (t.style.top = "-10px"),
+        (t.style.width = "250px")),
+      window.innerWidth > 1400 &&
+        (t.style =
+          "width: 350px;                   top: -50px;                   left: 47%;");
   });
 }
+
+// function setPos() {
+//   let rect = document.querySelector(".default-card");
+//   let el = document.querySelectorAll(".default-card .img");
+//   el.forEach((img, index) => {
+//     let l =
+//       rect.getBoundingClientRect().width +
+//       rect.getBoundingClientRect().x -
+//       img.getBoundingClientRect().width -
+//       50 +
+//       "px";
+
+//     if (window.innerWidth <= 767 && window.innerWidth > 500) {
+//       img.style.top = -10 + "px";
+//       img.style.width = 180 + "px";
+//       img.style.left =
+//         window.innerWidth < 600
+//           ? parseInt(l) - 20 + "px"
+//           : parseInt(l) - 20 + "px";
+//     }
+
+//     if (window.innerWidth <= 500) {
+//       img.style.top = 50 + "px";
+//       img.style.left =
+//         window.innerWidth > 400
+//           ? parseInt(l) + 30 + "px"
+//           : parseInt(l) + 34 + "px";
+//       img.style.width = 150 + "px";
+//     }
+//     if (window.innerWidth > 1000 && window.innerWidth < 1200) {
+//       img.style.top = "-25px";
+//       img.style.width = "300px";
+//       img.style.left = parseInt(l) - 100 + "px";
+//     } else if (window.innerWidth > 1200) {
+//       img.style.width = "350px";
+//       img.style.top = "-25px";
+//       img.style.left = parseInt(l) - 20 + "px";
+//       if (window.innerWidth > 1400) {
+//         img.style.width = "350px";
+//         img.style.top = "-25px";
+//         img.style.left = parseInt(l) - 80 + "px";
+//       }
+//     }
+//   });
+// }
 setInterval(() => {
   setPos();
 }, 100);
@@ -131,4 +156,12 @@ async function upload(e, bgimg = false) {
     }
     e.src = fr.result;
   };
+}
+let src = document.querySelectorAll("[href]");
+if (src) {
+  src.forEach((link) => {
+    link.onclick = function () {
+      window.open(link.getAttribute("href"));
+    };
+  });
 }

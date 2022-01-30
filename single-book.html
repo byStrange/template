@@ -13,7 +13,7 @@
 
     <title>Book</title>
   </head>
-  <body>
+  <body background="#E5E5E5">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container" display="flex" justifyContent="space-between">
         <div class="navbar-logo" href="index.html">
@@ -40,17 +40,17 @@
         </div>
         <ul class="navbar-nav nav-icons">
           <li class="nav-item">
-            <a href="">
+            <a href="#!">
               <i class="fas fa-search"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a href="">
+            <a href="#!">
               <i class="fas fa-heart"></i>
             </a>
           </li>
           <li class="nav-item no-md">
-            <a href="">
+            <a href="#!">
               <i class="fas fa-user"></i>
             </a>
           </li>
@@ -81,16 +81,16 @@
       </div>
    </div>
 
-   <div class="main add" marginBottom="100px">
+   <div class="main add" margin="40px 0 100px 0">
      <div class="container">
        <div class="title text" color="#000" fontSize="30px" marginBottom="40px">
         <span>Kitob ma'lumotlari</span>
       </div>
       <div class="row">
-        <div class="col-lg-8 col-md-12 col-sm-12">
-          <div class="form">
+        <div class="col-lg-8 col-md-12 col-sm-12" background="#fff">
+          <div class="form" style="padding: 0 !important; margin: 0 !important">
             <div class="img-upload-big" width="400px" marginRight="20px">
-                <img src="assets/images/card_book_2.png" transform="scale(1,1 )" width="100%" alt="">
+                <img id="bookImg" transform="scale(1,1)" width="100%" alt="Book image">
             </div>
             <div class="desc">
               <p class="item">
@@ -113,7 +113,7 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-12 col-sm-12">
-          <div class="profile">
+          <div class="profile" background="#fff" padding="10px 15px">
             <div class="text title">
               <span>Foydalanuvchi</span>
             </div>
@@ -137,7 +137,7 @@
                 <span class="bold">Telefon raqami: </span> <span>+998 xx xxx xx xx</span>
               </p>
             </div>
-            <div class="group">
+            <div class="group" marginBottom="0">
               <a href="#" class="custom-btn secondary"><span>Akkaunt</span></a>
             </div>
           </div>
@@ -153,9 +153,9 @@
              <span>Avtorning barcha e'lonlari:</span>
              <a href="mybooks.html" marginLeft="30px" textDecoration="underline" fontWeight="400" fontSize="20px" color="#000">barchasini ko'rish</a>
            </div>
-           <div class="row">
+           <div class="row books">
              <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-               <div class="book-card">
+               <div class="book-card" href="./single-book.html?book=card_book_1.png">
                  <div class="book-img">
                    <img src="assets/images/card_book_1.png" alt="">
                  </div>
@@ -176,7 +176,7 @@
                </div>
              </div>
              <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-               <div class="book-card">
+               <div class="book-card" href="./single-book.html?book=card_book_2.png">
                  <div class="book-img">
                    <img src="assets/images/card_book_2.png" alt="">
                  </div>
@@ -197,7 +197,7 @@
                </div>
              </div>
              <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-               <div class="book-card">
+               <div class="book-card" href="./single-book.html?book=card_book_3.png">
                  <div class="book-img">
                    <img src="assets/images/card_book_3.png" alt="">
                  </div>
@@ -218,7 +218,7 @@
                </div>
              </div>
              <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-               <div class="book-card">
+               <div class="book-card" href="./single-book.html?book=card_book_4.png">
                  <div class="book-img">
                    <img src="assets/images/card_book_4.png" alt="">
                  </div>
@@ -246,9 +246,9 @@
           <div class="title text" color="#000" fontSize="30px" marginBottom="50px">
             <span>O'xshash e'lonlar: </span>
           </div>
-          <div class="row">
+          <div class="row books">
             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-              <div class="book-card">
+              <div class="book-card" href="./single-book.html?book=card_book_1.png">
                 <div class="book-img">
                   <img src="assets/images/card_book_1.png" alt="">
                 </div>
@@ -269,7 +269,7 @@
               </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-              <div class="book-card">
+              <div class="book-card" href="./single-book.html?book=card_book_2.png">
                 <div class="book-img">
                   <img src="assets/images/card_book_2.png" alt="">
                 </div>
@@ -290,7 +290,7 @@
               </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-              <div class="book-card">
+              <div class="book-card" href="./single-book.html?book=card_book_3.png">
                 <div class="book-img">
                   <img src="assets/images/card_book_3.png" alt="">
                 </div>
@@ -311,7 +311,7 @@
               </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-              <div class="book-card">
+              <div class="book-card" href="./single-book.html?book=card_book_4.png">
                 <div class="book-img">
                   <img src="assets/images/card_book_4.png" alt="">
                 </div>
@@ -386,6 +386,13 @@
         <a href="#">@BookSwap</a> 2022 
     </div>
   </footer>
+  <script>
+    window.onload = function () {
+      let bookImg = document.getElementById('bookImg');
+      let src = location.search.split('book=');
+      src[1] ? bookImg.src = `assets/images/${src[1]}` : bookImg.src="assets/images/card_book_2.png";console.error('invalid location')
+    } 
+  </script>
   <script src="assets/js/tools.js"></script>
   </body>
 </html>
