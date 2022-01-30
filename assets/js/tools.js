@@ -29,55 +29,87 @@ function setPos() {
         (t.style.top = "-10px"),
         (t.style.width = "250px")),
       window.innerWidth > 1400 &&
-        (t.style =
-          "width: 350px;                   top: -50px;                   left: 47%;");
+        (t.style = "width: 350px;top: -50px;left: 47%;");
+    if (window.innerWidth < 500) {
+      t.style = "width: 150px;top: 50px";
+    }
+  });
+}
+let disabledLinks = document.querySelectorAll("[disabled]");
+
+if (disabledLinks) {
+  disabledLinks.forEach((link) => {
+    link.setAttribute("tabindex", "-1");
+  });
+}
+let dropBtn = document.querySelectorAll(".dropdown .dropdown-toggle");
+let links = document.querySelectorAll(".dropdown-menu .dropdown-item");
+if (dropBtn) {
+  dropBtn.forEach((btn) => {
+    btn.onclick = function (e) {
+      this.parentElement
+        .querySelector("#" + this.getAttribute("data-toggle"))
+        .classList.toggle("show");
+    };
+  });
+}
+if (links) {
+  links.forEach((item) => {
+    item.onclick = function (e) {
+      let inp = this.parentElement.parentElement.querySelector("#data");
+      inp.value = this.getAttribute("value")
+        ? this.getAttribute("value")
+        : this.innerText;
+      this.parentElement.parentElement.querySelector("#text").innerText =
+        inp.value;
+    };
+  });
+}
+window.onclick = function (e) {
+  let dr = document.querySelectorAll(".dropdown-menu");
+  let det = document.querySelectorAll(".detail .details");
+  if (dr || det) {
+    if (
+      !(
+        e.target.className.includes("dropdown-menu") ||
+        e.target.className.includes("dropdown-item") ||
+        e.target.className.includes("dropdown-toggle") ||
+        e.target.id.includes("text")
+      )
+    ) {
+      if (dr) {
+        dr.forEach((dp) => {
+          dp.classList.remove("show");
+        });
+      }
+    }
+    if (
+      !(
+        e.target.className.includes("det") ||
+        e.target.className.includes("li") ||
+        e.target.className.includes("opt")
+      )
+    ) {
+      if (det) {
+        det.forEach((dp) => {
+          dp.classList.remove("show");
+        });
+      }
+    }
+  }
+};
+let det = document.querySelectorAll("#det");
+if (det) {
+  det.forEach((btn) => {
+    btn.onclick = function () {
+      let target = this.parentElement.parentElement.parentElement.querySelector(
+        ".details"
+      );
+      target.classList.toggle("show");
+    };
   });
 }
 
-// function setPos() {
-//   let rect = document.querySelector(".default-card");
-//   let el = document.querySelectorAll(".default-card .img");
-//   el.forEach((img, index) => {
-//     let l =
-//       rect.getBoundingClientRect().width +
-//       rect.getBoundingClientRect().x -
-//       img.getBoundingClientRect().width -
-//       50 +
-//       "px";
-
-//     if (window.innerWidth <= 767 && window.innerWidth > 500) {
-//       img.style.top = -10 + "px";
-//       img.style.width = 180 + "px";
-//       img.style.left =
-//         window.innerWidth < 600
-//           ? parseInt(l) - 20 + "px"
-//           : parseInt(l) - 20 + "px";
-//     }
-
-//     if (window.innerWidth <= 500) {
-//       img.style.top = 50 + "px";
-//       img.style.left =
-//         window.innerWidth > 400
-//           ? parseInt(l) + 30 + "px"
-//           : parseInt(l) + 34 + "px";
-//       img.style.width = 150 + "px";
-//     }
-//     if (window.innerWidth > 1000 && window.innerWidth < 1200) {
-//       img.style.top = "-25px";
-//       img.style.width = "300px";
-//       img.style.left = parseInt(l) - 100 + "px";
-//     } else if (window.innerWidth > 1200) {
-//       img.style.width = "350px";
-//       img.style.top = "-25px";
-//       img.style.left = parseInt(l) - 20 + "px";
-//       if (window.innerWidth > 1400) {
-//         img.style.width = "350px";
-//         img.style.top = "-25px";
-//         img.style.left = parseInt(l) - 80 + "px";
-//       }
-//     }
-//   });
-// }
 setInterval(() => {
   setPos();
 }, 100);
@@ -113,6 +145,7 @@ if (nextBtn) {
           form.querySelector(".input-group p").innerText =
             "Telefon raqamingizga kelgan sms kodni kiriting";
           nextBtn.querySelector("span").innerText = "Tasdiqlash";
+          nextBtn.href = "register.html";
         }, 200);
       }, 300);
     }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/strange-bs/cloud/fonts/canaro.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link
@@ -23,38 +24,28 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
+              <a class="nav-link active" disabled aria-current="page" href="#"
                 >Bosh sahifa</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">E'lonlar oynasi</a>
+              <a class="nav-link" href="#" disabled>E'lonlar oynasi</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Mening e'lonlarim</a>
+              <a class="nav-link" href="#" disabled>Mening e'lonlarim</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Kitob joylash</a>
+              <a class="nav-link" href="#" disabled>Kitob joylash</a>
             </li>
           </ul>
         </div>
         <ul class="navbar-nav nav-icons">
           <li class="nav-item">
             <a href="">
-              <i class="fas fa-search"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="">
-              <i class="fas fa-heart"></i>
-            </a>
-          </li>
-          <li class="nav-item no-md">
-            <a href="">
               <i class="fas fa-user"></i>
             </a>
           </li>
-          <li class="nav-item toggler show-md" id="toggleNav">
+          <li class="nav-item toggler show-md" disabled id="toggleNav">
             &#9776
           </li>
         </ul>
@@ -83,7 +74,7 @@
    <div class="wrapper-bg"></div>
    <div class="main wrapper df">
     <div class="container df">
-      <form action="" class="form" word="Register">
+      <form action="" class="form" word="Register" paddingBottom="20px">
         <div class="title" marginBottom="15px">
           <span>Ma'lumotlar</span>
         </div>
@@ -106,10 +97,15 @@
           <input type="text" placeholder="Parolni tasdiqlang" required>
         </div>
         <div class="group">
-          <a href="#" class="custom-btn secondary" id="send">
+          <a class="custom-btn secondary" id="send">
             <span>Kirish</span>
           </a>
         </div>
+        <div class="details" marginBottom="0">
+          <p>
+              Akkauntingiz bormi ? <a href="login.html">Kirish</a> 
+          </p>
+      </div>
       </form>
     </div>
    </div>

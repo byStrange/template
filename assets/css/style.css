@@ -1,17 +1,12 @@
 * {
   transition: height 150ms, margin-left 90ms, width 100ms;
 }
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 a {
   text-decoration: none;
 }
-@font-face {
-  font-family: "Canaro";
-  src: url("../assets/fonts/Canaro-Black.woff") format("woff"),
-    url("../assets/fonts/Canaro-Black.ttf") format("ttf");
-}
 .navbar {
-  height: 90px;
+  height: 80px;
   background: linear-gradient(
     103.17deg,
     rgba(255, 255, 255, 0.3) 0%,
@@ -58,7 +53,7 @@ a {
   -webkit-text-stroke: 1px #fff;
 }
 .navbar a {
-  font-family: "Poppins";
+  font-family: "Canaro";
   color: #fff;
 }
 .hidden-nav {
@@ -83,7 +78,7 @@ ul li {
 
 .hidden-nav .container a {
   color: #fff;
-  font-family: Poppins;
+  font-family: Canaro;
   transition: 200ms;
 }
 .hidden-nav li:hover a {
@@ -92,9 +87,18 @@ ul li {
 .navbar-logo img {
   width: 25px;
 }
+a[disabled],
+li[disabled] {
+  pointer-events: none;
+  color: transparent;
+  cursor: default;
+}
+.toggler[disabled] {
+  display: none !important;
+}
 .title.text {
   font-size: 50px;
-  font-family: poppins;
+  font-family: "Canaro";
   margin-bottom: 100px;
   color: #fff;
   font-weight: 400;
@@ -117,7 +121,7 @@ ul li {
   height: 400px;
   position: relative;
   color: #fff;
-  font-family: poppins;
+  font-family: "Canaro";
 }
 .default-card .title {
   font-size: 50px;
@@ -140,6 +144,7 @@ ul li {
     rgba(255, 255, 255, 0.05) 76.68%
   );
   backdrop-filter: blur(40px);
+  font-family: "Canaro";
   transform: translateZ(20px);
 }
 .custom-btn span {
@@ -170,7 +175,19 @@ ul li {
   width: 100%;
   height: 100%;
 }
-
+.dropdown * {
+  user-select: none;
+}
+.form::after {
+  content: attr(word);
+  font-size: 60px;
+  font-weight: 400;
+  color: #fff;
+  inset: 0 -350px;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
 @media screen and (max-width: 1200px) {
   .navbar-nav .nav-item {
     margin-left: 0;
@@ -197,14 +214,11 @@ ul li {
   .navbar {
     height: 100px !important;
   }
-}
-/* @media screen and (max-width: 990px) and (min-width: 766px) {
-  .default-card .img {
-    width: 270px;
-    top: -18px;
-    left: 58% !important;
+  form.form::after {
+    display: none !important;
   }
-} */
+}
+
 @media screen and (max-width: 991px) {
   .no-md {
     display: none;
@@ -256,7 +270,7 @@ ul li {
     margin-top: 100px !important;
   }
   .form::before {
-    content: attr(word);
+    content: attr(word2);
     font-size: 30px;
     position: absolute;
     inset: -100px 0;
@@ -355,22 +369,16 @@ ul li {
     margin-left: 0 !important;
   }
 }
-
+i[filled] {
+  color: #fff !important;
+  -webkit-text-stroke: transparent !important;
+}
 .df {
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
-.form::after {
-  content: attr(word);
-  font-size: 60px;
-  font-weight: 400;
-  color: #fff;
-  inset: 0 -350px;
-  position: absolute;
-  width: 0;
-  height: 0;
-}
+
 .form {
   width: 580px;
   background: linear-gradient(
@@ -378,9 +386,9 @@ ul li {
     rgba(255, 255, 255, 0.3) 0%,
     rgba(255, 255, 255, 0.05) 76.68%
   );
-  backdrop-filter: blur(27px);
+  backdrop-filter: blur(15px);
   padding: 50px 70px;
-  font-family: Poppins, serif;
+  font-family: Canaro, serif;
   border-radius: 20px;
   position: relative;
   margin-top: 20px;
@@ -527,7 +535,7 @@ div.form .group {
 
 .book-card {
   color: #000;
-  font-family: poppins, serif;
+  font-family: "Canaro", serif;
   height: 450px;
   position: relative;
 }
@@ -544,6 +552,10 @@ div.form .group {
   backdrop-filter: blur(4px);
   left: 30%;
   padding: 20px 10px;
+  display: none;
+}
+.book-card.detail .details.show {
+  display: block;
 }
 
 .book-card.detail .details .li:not(:last-child) {
@@ -552,6 +564,19 @@ div.form .group {
 .book-card.detail .details .li span {
   text-decoration: underline;
   color: #151515;
+}
+.det {
+  position: relative;
+}
+.det:hover::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background: rgba(130, 130, 130, 0.3);
+  transform: translate(-55%, -50%);
+  border-radius: 50%;
+  top: 10px;
 }
 
 .row.books .book-card {
@@ -632,7 +657,7 @@ div.form .group {
 }
 footer {
   margin-top: 100px;
-  font-family: poppins, serif;
+  font-family: "Canaro", serif;
   padding: 10px 0;
   text-align: left !important;
 }
@@ -765,7 +790,7 @@ textarea:focus {
   height: 100%;
   display: flex;
   flex-direction: column;
-  font-family: poppins, serif;
+  font-family: "Canaro", serif;
 }
 
 .main.add .text.title {
@@ -795,7 +820,7 @@ textarea:focus {
   margin-left: 15px;
   display: flex;
   font-weight: bold;
-  font-family: poppins, serif;
+  font-family: "Canaro", serif;
   flex-direction: column;
 }
 
@@ -826,5 +851,5 @@ textarea:focus {
 }
 /* 
 .ads.container.span {
-  font-family: poppins;
+  font-family: 'Canaro';
 } */
